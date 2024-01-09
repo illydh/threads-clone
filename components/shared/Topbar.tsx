@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { OrganizationSwitcher, SignOutButton, SignedIn } from "@clerk/nextjs";   //  attribute that instantaneously checks if user is logged in
+import { dark } from "@clerk/themes";    //  allowing user hud to adjust to dark theme of Threads
 
 function Topbar() {
     return (
@@ -23,9 +24,10 @@ function Topbar() {
 
                 <OrganizationSwitcher 
                     appearance={{
-                    elements: {
-                        organizationSwitcherTrigger: "py-2 px-4"
-                        }
+                        baseTheme: dark,
+                        elements: {
+                            organizationSwitcherTrigger: "py-2 px-4"
+                         }
                     }}    
                 />
             </div>
